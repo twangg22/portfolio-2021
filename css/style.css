@@ -2,287 +2,310 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
-    background: url("../images/annie-spratt-WlAXIKTIDN8-unsplash.jpg") no-repeat center center fixed;
-    background-size: cover;
-    background-color: whitesmoke;
+    background-color: white;
+    font-family: sans-serif;
+    font-size: small;
 }
 
-h1 {
-    font-family: "Abril Fatface", serif;
-    font-size: 2.2em;
-    color:black;
-    text-align: center;
-    line-height: 2;
-    padding-top:30px;
-    padding-bottom:10px;
-}
-
-nav{
-    display:flex;
-    padding: 2% 6%;
-    justify-content: space-between;
-    align-items: center;
-}
-.nav-links{
-    flex:1;
-    text-align: center;
-}
-
-.nav-links ul li{
-    list-style: none;
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
-}
-
-.nav-links ul li a{
-    font-family: "Abril Fatface", serif;
-    color: black;
-    font-size: 1em;
-    text-decoration:none;
-}
-/*accessibility*/
-.skip-to-content-link{
-    left:0px;
-    position: absolute;
-    transform: translateY(-100%);
-}
-
-.skip-to-content-link{
+/*skip to content*/
+a.skip {
     background: white;
-    height:30px;
-    left:0px;
-    padding:6px;
+    left: 0;
+    padding: 6px;
+    -webkit-transition: top 1s ease-out;
+    transition: top 1s ease-out;
+    z-index: 1;
     position: absolute;
-    transform: translateY(-100%);
+    top: -40px;
 }
 
-.skip-to-content-link:focus{
-    transform: translateY(0%);
+a.skip:focus, a.skip:active {
+    position: absolute;
+    top: auto;
 }
 
 *:focus {
     border: 2px solid black;
 }
 
-
-
-.nav-links .current{
-    border-bottom: 3px solid black;
+/*header*/
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-
-/*grid*/
-.wrapper {
-    display: grid;
-    grid-template-columns: 1fr 6fr 1fr;
-    grid-template-rows: auto;
-    min-height: auto;
-    gap: 25px;
-}
-
-.item2,  .item5 , .item8{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-align: center;
-    font-size: 16px;
-}
-
-#skip img{
-    display: block;
-    max-width: 25%;
-    padding-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-}
-/*footer*/
-
-footer {
-    position:fixed;
-    bottom:0;
+h1 {
     width: 100%;
-    height: min-content;
+    text-align: center;
+    font-size: xx-large;
+    color: black;
+    padding: 10px;
+    font-family: "Oswald", serif;
+}
+
+h2 {
+    background-color: white;
+    color: black;
+    font-family: "Oswald", serif;
+    font-size: x-large;
+    /* padding: 10px 0 0 0; */
+    text-align: center;
+}
+
+p {
+    background-color: white;
+    color: black;
+    font-family: sans-serif;
+    font-size: medium;
+    padding: 5px 10px 10px 10px;
+    text-align: center;
+}
+
+/*nav*/
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-links a {
+    /* position: relative; */
+    color: black;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.nav-links .current {
+    /* border: 3px solid black; */
+    font-size: x-large;
+}
+
+/*footer*/
+footer {
+    position: absolute;
+    width: 100%;
+    /* height: min-content; */
+    /* margin-top: 30px; */
+}
+
+footer p {
+    display: block;
+    width: 100%;
     background-color: black;
     color: white;
-  }
-footer p{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    padding: auto;
+    font-family: sans-serif;
     text-align: center;
-    font-size: 1em;
+    font-size: medium;
 }
 
-/*album page*/
+/*parallax image*/
+.parallax {
+    background-image: url("../images/vangogh_icon.png");
+    height: 300px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-#albums{
-    min-height: 500px; 
+/*form*/
+.form-inline {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: white;
+    color: black;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-items: center;
     justify-content: center;
-    padding-bottom: 10px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-#albums img{
-    border: 5px solid black;
-    margin: 10px;
-    max-width: 70%;
-    height: auto;
-}
-#album-links{
-    justify-content: center;
+    font-family: sans-serif;
+    font-size: medium;
 }
 
-/*movies page*/
-
-#movies{
-    min-height: 500px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-bottom: 10px;
-}
-#movies img{
-    border: 5px solid black;
-    margin: 10px;
-    max-width: 40%;
-    height: auto;
-}
-
-/*books page*/
-
-#books{
-    min-height: 500px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-bottom: 20px;
-}
-#books img{
-    border: 5px solid black;
-    margin: 10px;
-    max-width: 40%;
-    height: auto;
-}
-/*form*/  
-  form {
-    border: 3px solid #f1f1f1;
-  }
-  
-  legend{ 
-    font-size: 125%;
-    font-style:italic;
-    text-transform: uppercase;
-    text-align: center;
-  }
-  
-  label{
-    display: inline-block;
-    margin-right:10px;
-    width:15%;
-  }
-  input {
+.form-inline label {
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-  span{
-    margin-left:20%;
-    font-family: italic;
-    font-weight: bold;
-  }
-  
-  textarea{
+    padding: 15px 0 5px 0;
+}
+
+.form-inline input {
+    vertical-align: middle;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid black;
     width: 100%;
-    height: 35vh;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-  
-  
-  input[type=checkbox]{
-      display:inline;
-      width:inherit;
-  }
-  
-  input[type=submit] {
-    background-color: #38803C;
+}
+
+textarea {
+    width: 100%;
+    height: 25vh;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+input[type=submit] {
+    background-color: black;
     color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
+    padding: 20px;
+    margin: 20px;
     border: none;
     cursor: pointer;
     width: 100%;
-  }
-  
-  input[type=submit]:hover {
-    opacity: 0.8;
-  }
-  
-  
-  
-  
-  /* Change styles for span and cancel button on extra small screens */
-  @media screen and (min-width: 770px) {
-    form{
-      width: 80%;
-      margin: 0 auto;
-    }
-  
-    input{
-      width:80%;
-    }
-  
-    textarea{
-      width:80%;
-      height: 25vh;
-   }
-   
-   div + label{
-      line-height: 25vh;
-      vertical-align:top;
-   }
-  }
+}
 
-@media screen and (min-width: 768px){
-    h1 {
-        font-size: 3em;
+input[type=submit]:hover {
+    opacity: 0.8;
+}
+
+/*painting page*/
+.paintingContainer {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto;
+    grid-gap: 20px;
+    padding: 10px;
+}
+
+.paintingImage {
+    padding: 10px;
+    border: 3px solid black;
+}
+
+.paintingImage:hover {
+    opacity: 80%;
+}
+
+.paintingName {
+    font-family: sans-serif;
+    text-align: center;
+    font-size: medium;
+}
+
+
+/*movies page*/
+.animation {
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
     }
-    .nav-links ul li a{
-        font-size: 1.5em;
+
+    to {
+        margin-left: 0%;
+        width: 100%;
     }
-    .wrapper {
-        display: grid;
-        grid-template-columns: 1fr 4fr 1fr;
-        grid-template-rows: auto;
-        min-height: auto;
-        gap: 35px;
+}
+
+#movie img {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lovingVincentVideo {
+    width: 100%;
+    height: 200px;
+}
+
+#movies img {
+    border: 5px solid black;
+    margin: 10px;
+    max-width: 40%;
+    height: auto;
+}
+
+/*museum page*/
+
+.museumContainer {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto;
+    grid-gap: 15px;
+}
+
+.museumLocation {
+    font-size: small;
+    color: gray;
+}
+
+
+
+@media screen and (min-width: 768px) {
+
+    .nav-links {
+        flex-direction: row;
+        justify-content: flex-end;
     }
-    .item2,  .item5 , .item8{
-        font-size: 1.5em;
+
+    .nav-links a {
+        padding: 20px;
     }
+
+    .form-inline {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .form-inline input {
+        width: 80%;
+    }
+
+    textarea {
+        width: 80%;
+    }
+
+    .form-inline label {
+        width: 80%;
+    }
+
+    #skip p {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    #painting p {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    .paintingContainer {
+        grid-template-columns: auto auto;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    #movie p {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    .lovingVincentVideo {
+        width: 100%;
+        height: 400px;
+    }
+
+    #museum p {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    /* .museumContainer {
+        grid-template-columns: auto auto; */
+        /* margin-left: 10%;
+        margin-right: 10%;
+
+    } */
+
+
+}
+@media screen and (min-width: 992px){
     
-    #albums img{
-        border: 5px solid black;
-        margin: 10px;
-        max-width: 40%;
-        height: auto;
-    }
-    
-    #movies img{
-        border: 5px solid black;
-        margin: 10px;
-        max-width: 30%;
-        height: auto;
-    }
-    #books img{
-        border: 5px solid black;
-        margin: 10px;
-        max-width: 30%;
-        height: auto;
-    }
+
 }
